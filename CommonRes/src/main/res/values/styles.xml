@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="public_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="public_AppTheme" parent="QMUI.Compat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/public_colorPrimary</item>
         <item name="colorPrimaryDark">@color/public_colorPrimaryDark</item>
@@ -35,4 +35,17 @@
         <!--是否模糊-->
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+
+
+    <!--透明渐变的TabView-->
+    <declare-styleable name="AlphaTabView">
+        <attr name="tabIconNormal" format="reference" />
+        <attr name="tabIconSelected" format="reference" />
+        <attr name="tabText" format="string" />
+        <attr name="tabTextSize" format="dimension" />
+        <attr name="textColorNormal" format="color" />
+        <attr name="textColorSelected" format="color" />
+        <attr name="badgeBackgroundColor" format="color" />
+        <attr name="paddingTexwithIcon" format="dimension"/>
+    </declare-styleable>
 </resources>

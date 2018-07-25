@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="me.jessyan.armscomponent.gold">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="me.jessyan.armscomponent.gold">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -16,7 +17,8 @@
         android:icon="@mipmap/gold_ic_logo"
         android:label="@string/gold_module_name"
         android:supportsRtl="true"
-        android:theme="@style/public_AppTheme">
+        android:theme="@style/public_AppTheme"
+        tools:replace="android:label">
         <activity android:name=".mvp.ui.activity.GoldHomeActivity"
                   android:configChanges="orientation|screenSize"
                   android:screenOrientation="portrait">

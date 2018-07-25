@@ -104,7 +104,20 @@ ext {
             "logger"                   : "com.orhanobut:logger:2.2.0",
             "canary-debug"             : "com.squareup.leakcanary:leakcanary-android:${version["canarySdkVersion"]}",
             "canary-release"           : "com.squareup.leakcanary:leakcanary-android-no-op:${version["canarySdkVersion"]}",
-            "umeng-analytics"          : "com.umeng.analytics:analytics:6.0.1"
+            "umeng-analytics"          : "com.umeng.analytics:analytics:6.0.1",
+
+
+            "qmui"                     : "com.qmuiteam:qmui:1.0.6",//腾讯 UI 工具
+            "androidlog"               : "com.blankj:alog:1.8.0",
+            "litepal"                  : "org.litepal.android:core:1.6.1",//database
+            "adapter"                  : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30",//万能适配器
+            "matisse"                  : "com.zhihu.android:matisse:0.4.3",//图片选择器
+            "SmartRefreshLayout"       : "com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-7",//刷新
+            "SmartRefreshHeader"       : "com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-7",//刷新
+
+            //上传下载
+            "UploadDownload"           :"com.lzy.net:okgo:3.0.4",
+            "UploadService"           :"com.lzy.net:okserver:2.0.5",
     ]
 
 
