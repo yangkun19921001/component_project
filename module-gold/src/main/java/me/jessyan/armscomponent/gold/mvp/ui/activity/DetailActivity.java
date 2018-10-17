@@ -27,10 +27,10 @@ import android.webkit.WebViewClient;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
+import com.yk.component.res.dialog.ProgresDialog;
+import com.yk.component.sdk.core.RouterHub;
 
 import butterknife.BindView;
-import me.jessyan.armscomponent.commonres.dialog.ProgresDialog;
-import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.gold.R;
 import me.jessyan.armscomponent.gold.R2;
 import me.jessyan.armscomponent.gold.app.GoldConstants;

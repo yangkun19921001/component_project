@@ -16,6 +16,8 @@ android {
         versionName rootProject.ext.android["versionName"]
 
         testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
+
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -44,7 +46,6 @@ dependencies {
     }
     api rootProject.ext.dependencies["retrofit-url-manager"]
 
-
     //腾讯 UI 组件
     api rootProject.ext.dependencies["qmui"]
     //郭霖 移动端数据库
@@ -62,4 +63,12 @@ dependencies {
     api rootProject.ext.dependencies["UploadService"]
     //组件通信
     api rootProject.ext.dependencies["androideventbus"]
+    //工具类
+    api rootProject.ext.dependencies["androidutils"]
+    //dex突破65535的限制
+    api rootProject.ext.dependencies["multidex"]
+    //屏幕适配
+    api rootProject.ext.dependencies["autosize"]
+
+
 }

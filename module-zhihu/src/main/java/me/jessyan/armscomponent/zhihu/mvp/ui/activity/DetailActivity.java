@@ -29,15 +29,15 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.yk.component.sdk.core.RouterHub;
+import com.yk.component.sdk.utils.HtmlUtil;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.zhihu.R;
 import me.jessyan.armscomponent.zhihu.R2;
 import me.jessyan.armscomponent.zhihu.app.ZhihuConstants;
-import me.jessyan.armscomponent.commonsdk.utils.HtmlUtil;
 import me.jessyan.armscomponent.zhihu.di.component.DaggerDetailComponent;
 import me.jessyan.armscomponent.zhihu.mvp.contract.DetailContract;
 import me.jessyan.armscomponent.zhihu.mvp.model.entity.ZhihuDetailBean;

@@ -22,6 +22,7 @@ android {
                 arguments = [moduleName: project.getName()]
             }
         }
+        multiDexEnabled true
     }
     buildTypes {
         debug {
@@ -72,4 +73,7 @@ dependencies {
     debugImplementation rootProject.ext.dependencies["canary-debug"]
     releaseImplementation rootProject.ext.dependencies["canary-release"]
     testImplementation rootProject.ext.dependencies["canary-release"]
+
+    //dex突破65535的限制
+    api rootProject.ext.dependencies["multidex"]
 }

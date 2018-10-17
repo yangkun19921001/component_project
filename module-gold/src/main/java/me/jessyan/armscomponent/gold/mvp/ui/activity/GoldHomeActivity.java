@@ -29,11 +29,11 @@ import com.jess.arms.base.DefaultAdapter;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.paginate.Paginate;
+import com.yk.component.sdk.core.RouterHub;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.gold.R;
 import me.jessyan.armscomponent.gold.R2;
 import me.jessyan.armscomponent.gold.di.component.DaggerGoldHomeComponent;

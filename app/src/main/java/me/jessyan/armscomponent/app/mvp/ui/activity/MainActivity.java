@@ -24,18 +24,22 @@ import android.widget.Button;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.ALog;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
+import com.yk.component.sdk.core.RouterHub;
+import com.yk.component.res.updata.AppDownloadManager;
+import com.yk.component.sdk.utils.Utils;
+import com.yk.component.service.gank.service.GankInfoService;
+import com.yk.component.service.gold.service.GoldInfoService;
+import com.yk.component.service.zhihu.service.ZhihuInfoService;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import me.jessyan.armscomponent.app.R;
-import me.jessyan.armscomponent.commonsdk.core.RouterHub;
-import me.jessyan.armscomponent.commonsdk.utils.Utils;
-import me.jessyan.armscomponent.commonservice.gank.service.GankInfoService;
-import me.jessyan.armscomponent.commonservice.gold.service.GoldInfoService;
-import me.jessyan.armscomponent.commonservice.zhihu.service.ZhihuInfoService;
 
 /**
  * ================================================
@@ -49,6 +53,7 @@ import me.jessyan.armscomponent.commonservice.zhihu.service.ZhihuInfoService;
  */
 @Route(path = RouterHub.APP_MAINACTIVITY)
 public class MainActivity extends BaseActivity {
+
     @BindView(R.id.bt_zhihu)
     Button mZhihuButton;
     @BindView(R.id.bt_gank)
@@ -64,6 +69,8 @@ public class MainActivity extends BaseActivity {
     GoldInfoService mGoldInfoService;
 
     private long mPressedTime;
+    private AppDownloadManager downloadManager;
+
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -82,6 +89,35 @@ public class MainActivity extends BaseActivity {
         loadZhihuInfo();
         loadGankInfo();
         loadGoldInfo();
+
+        //初始化 APP 更新
+        initAppUpLoad();
+    }
+
+    private void initAppUpLoad() {
+        downloadManager = new AppDownloadManager(this);
+        downloadManager.setUpdateListener(new AppDownloadManager.OnUpdateListener(){
+            @Override
+            public void update(int currentByte, int totalByte) {
+
+            }
+        });
+        downloadManager.checkAppVerstion(com.blankj.utilcode.util.Utils.getApp(), new StringCallback() {
+            @Override
+            public void onSuccess(Response<String> response) {
+                if (response.getRawResponse().body().toString() != null){
+                    ALog.i(TAG,response.getRawResponse().body().toString());
+                    String[] appInfoJson = response.body().toString().split(",");
+                    downloadManager.showUpdataNoty("","",appInfoJson[1]);
+                }
+            }
+
+            @Override
+            public void onError(Response<String> response) {
+                super.onError(response);
+                ArmsUtils.snackbarText(response.getException().getMessage());
+            }
+        });
     }
 
     private void loadZhihuInfo() {
@@ -155,5 +191,18 @@ public class MainActivity extends BaseActivity {
                 Utils.navigation(MainActivity.this, RouterHub.GOLD_HOMEACTIVITY);
                 break;
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        downloadManager.onPause();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        downloadManager.onResumes();
     }
 }

@@ -22,6 +22,7 @@ import android.view.View;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.DefaultAdapter;
 import com.jess.arms.di.scope.ActivityScope;
+import com.yk.component.sdk.core.RouterHub;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,6 @@ import java.util.List;
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
-import me.jessyan.armscomponent.commonsdk.core.RouterHub;
 import me.jessyan.armscomponent.zhihu.app.ZhihuConstants;
 import me.jessyan.armscomponent.zhihu.mvp.contract.ZhihuHomeContract;
 import me.jessyan.armscomponent.zhihu.mvp.model.ZhihuModel;

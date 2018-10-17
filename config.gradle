@@ -114,10 +114,15 @@ ext {
             "matisse"                  : "com.zhihu.android:matisse:0.4.3",//图片选择器
             "SmartRefreshLayout"       : "com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-7",//刷新
             "SmartRefreshHeader"       : "com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-7",//刷新
+            //Utils----- 参考这位大神写的 https://github.com/Blankj
+            "androidutils"             : "com.blankj:utilcode:1.18.0",
 
             //上传下载
-            "UploadDownload"           :"com.lzy.net:okgo:3.0.4",
-            "UploadService"           :"com.lzy.net:okserver:2.0.5",
+            "UploadDownload"           : "com.lzy.net:okgo:3.0.4",
+            "UploadService"            : "com.lzy.net:okserver:2.0.5",
+
+            //屏幕适配
+            "autosize"                 : "me.jessyan:autosize:0.7.0",
     ]
 
 

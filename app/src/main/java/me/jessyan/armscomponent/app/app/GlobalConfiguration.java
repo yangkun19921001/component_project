@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * ================================================
  * 组件的全局配置信息在此配置, 需要将此实现类声明到 AndroidManifest 中
- * CommonSDK 中已有 {@link me.jessyan.armscomponent.commonsdk.core.GlobalConfiguration} 配置有组件可公用的配置信息
+ * CommonSDK 中已有 {@link com.yk.component.sdk.core.GlobalConfiguration} 配置有组件可公用的配置信息
  * 这里用来配置一些组件自身私有的配置信息
  *
  * @see com.jess.arms.base.delegate.AppDelegate

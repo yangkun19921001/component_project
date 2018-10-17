@@ -36,7 +36,8 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
-
+    <attr name="app_primary_color" format="color"/> <!-- topbar -->
+    <attr name="app_content_bg_color" format="color"/> <!-- content-->
     <!--透明渐变的TabView-->
     <declare-styleable name="AlphaTabView">
         <attr name="tabIconNormal" format="reference" />
@@ -48,4 +49,24 @@
         <attr name="badgeBackgroundColor" format="color" />
         <attr name="paddingTexwithIcon" format="dimension"/>
     </declare-styleable>
+
+
+    <!--不同状态的 View 属性-->
+    <declare-styleable name="Public_MultipleStatusView">
+        <attr name="Public_loadingView" format="reference"/>
+        <attr name="Public_errorView" format="reference"/>
+        <attr name="Public_emptyView" format="reference"/>
+        <attr name="Public_noNetworkView" format="reference"/>
+        <attr name="Public_contentView" format="reference"/>
+    </declare-styleable>
+
+    <style name="Public_MultipleStatusView" />
+    <style name="Public_MultipleStatusView.Content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textColor">#a9b7b7</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>
